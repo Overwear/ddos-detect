@@ -35,7 +35,7 @@ Combined Log Format (https://httpd.apache.org/docs/1.3/logs.html)
 3. Start single node single cluster Kafka broker
 4. Create topic "msg" on Kafka
 5. Run spark application in Eclipse IDE
-6. Run java jar file that reads apache-access-log.txt line by line into Kafka
+6. Run java jar file that reads apache-access-log.txt line by line into Kafka (https://github.com/Overwear/kafka-producer-accesslogs)
 
 # Architecture
 log file -> kafka producer -> spark streaming -> output file in hdfs
