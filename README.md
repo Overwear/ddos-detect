@@ -45,6 +45,7 @@ The log file can be visualized with the open source technology GoAccess. See the
 
 # References
 * https://goaccess.io/get-started
+* https://kafka.apache.org/quickstart
 * https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html
 * https://spark.apache.org/docs/2.2.0/streaming-kafka-0-8-integration.html
 * https://www.youtube.com/watch?v=qrPjAyIapFY
