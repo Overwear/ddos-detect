@@ -41,12 +41,12 @@ Combined Log Format (https://httpd.apache.org/docs/1.3/logs.html)
 log file -> kafka producer -> spark streaming -> output file in hdfs
 
 # Visual Log Analysis with GoAccess
-
+The log file can be visualized with the open source technology GoAccess. See the "report.html" file for a detailed visualization of the access data.
 
 # References
-https://goaccess.io/get-started
-https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html
-https://spark.apache.org/docs/2.2.0/streaming-kafka-0-8-integration.html
-https://www.youtube.com/watch?v=qrPjAyIapFY
+* https://goaccess.io/get-started
+* https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html
+* https://spark.apache.org/docs/2.2.0/streaming-kafka-0-8-integration.html
+* https://www.youtube.com/watch?v=qrPjAyIapFY
 
 
