@@ -44,7 +44,7 @@ object DdosDetect {
     val sortedRes = runningCounts.transform(x => x.sortBy(_._2, false))
     
     // Get IP addresses that have more than 50 counts
-    val ddosIp = sortedRes.filter(x => x._2 > 50)
+    val ddosIp = sortedRes.filter(x => x._2 > 30)
     
     // Save Ddos IP addresses to files in hdfs
     sortedRes.repartition(1).saveAsTextFiles(streamDataFileLoc)
