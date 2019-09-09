@@ -44,9 +44,9 @@ log file -> kafka producer -> spark streaming -> output file in hdfs
 
 
 # References
-https://goaccess.io/get-started
-https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html
-https://spark.apache.org/docs/2.2.0/streaming-kafka-0-8-integration.html
-https://www.youtube.com/watch?v=qrPjAyIapFY
+* https://goaccess.io/get-started
+* https://spark.apache.org/docs/2.2.0/streaming-programming-guide.html
+* https://spark.apache.org/docs/2.2.0/streaming-kafka-0-8-integration.html
+* https://www.youtube.com/watch?v=qrPjAyIapFY
 
 
