@@ -1,0 +1,27 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/edureka/Desktop/ddos-detect/target/scala-2.11/ddos-detect_2.11-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$5.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$6.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$6$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$6$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$7.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DdosDetect$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/edureka/Desktop/ddos-detect/target/scala-2.11/classes/DdosDetect$$anonfun$8.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
