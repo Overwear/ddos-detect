@@ -9,17 +9,12 @@ import org.apache.spark.SparkContext
 
 object DdosDetect {
   
-  def updateFunction(newValues: Seq[Int], runningCount: Option[Int]): Option[Int] = {
-    val newCount = runningCount.getOrElse(0) + newValues.sum  // add the new values with the previous running count to get the new count
-    Some(newCount)
-  }
-  
   def functionToCreateContext(): StreamingContext = {
     val sparkConf = new SparkConf()
                   .setAppName("ddos-detect")
                   .setMaster("local[4]")
     val sc = new SparkContext(sparkConf)
-    val ssc = new StreamingContext(sc, Seconds(5))   // new context
+    val ssc = new StreamingContext(sc, Seconds(1))
     
     // Kafka config
     val topics = Map("msg" -> 1)
@@ -27,8 +22,8 @@ object DdosDetect {
     val groupId = "group_1"
     
     // Output files loc
-    val streamDataFileLoc = "/home/edureka/Desktop/ddos-detect/result/Stream/"
-    val ddosIpFileLoc = "/home/edureka/Desktop/ddos-detect/result/ddos_ip/"
+    val streamDataFileLoc = "/ddos_project/results/Stream/"
+    val ddosIpFileLoc = "/ddos_project/results/ddos_ip/"
     
     // Create dstream with kafka
     val kafkaStream = KafkaUtils.createStream(ssc, zookeeper, groupId, topics)
@@ -38,29 +33,31 @@ object DdosDetect {
     
     // Count the IP address
     val ipAddressCountsPair = ipAddress.map(x => (x,1))
-    val runningCounts = ipAddressCountsPair.updateStateByKey[Int](updateFunction _)
+    
+    // Reduce each batch in a 150 seconds window every 10 seconds
+    val runningIpAddresses = ipAddressCountsPair.reduceByKeyAndWindow((a:Int,b:Int) => a+b, (a:Int,b:Int) => a-b, Seconds(150), Seconds(10))
     
     // Sort the IP addresses by descending order
-    val sortedRes = runningCounts.transform(x => x.sortBy(_._2, false))
+    val sortedRes = runningIpAddresses.transform(x => x.sortBy(_._2, false))
     
-    // Get IP addresses that have more than 50 counts
-    val ddosIp = sortedRes.filter(x => x._2 > 30)
+    // Get IP addresses that have more than 20 counts
+    val ddosIp = sortedRes.filter(x => x._2 > 20)
     
     // Save Ddos IP addresses to files in hdfs
     sortedRes.repartition(1).saveAsTextFiles(streamDataFileLoc)
     ddosIp.repartition(1).saveAsTextFiles(ddosIpFileLoc)
-    ssc.checkpoint("checkpoint")
+    ssc.checkpoint("/ddos_project/checkpoint/")
     ssc
   }
 
   def main(args: Array[String]) {
 
-    val ssc = StreamingContext.getOrCreate("checkpoint", functionToCreateContext _)
+    val ssc = StreamingContext.getOrCreate("/ddos_project/checkpoint/", functionToCreateContext _)
     
+    //start the stream
     ssc.start()
-    Thread.sleep(180000)
+    Thread.sleep(140000)
     ssc.stop()
-    //ssc.awaitTerminationOrTimeout(15000)
     println("Program Finished")
     
     
